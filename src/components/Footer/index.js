@@ -80,7 +80,7 @@ const Footer = () => {
                     <FaRegCopyright />
                     <p>Copyright 2022 <span>Hidoc Dr.Inc.</span></p>
                 </div>
-                <p className="footer-content">Terms & Conditions| Privacy Policy</p>
+                <p className="footer-content">Terms & Conditions | Privacy Policy</p>
             </div>
         </footer>
     )
