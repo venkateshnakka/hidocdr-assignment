@@ -4,4 +4,113 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+    gap: 20px;
+    padding: 0px 20px 20px 20px;
+}
+.footer-bottom-container {
+    background-color: #bdbfbe;
+    padding: 10px 0px;
+}
+.footer-bottom-container span {
+    font-weight: bold;
+}
+.copyright-icon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+.footer-content {
+    margin-top: 0px;
+}
+.futures-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drug-database {
+    background-color: blue;
+    padding: 15px;
+    border-radius: 50%;
+}
+.futures-container div {
+   border: 1px solid gray; 
+   width: 130px;
+   height: 100px;
+}
+.futures-container p {
+    font-size: 12px;
+}
+.futeres-box1 {
+   background-color: #d8edf0; 
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.futeres-box1  p{
+    color: #3e86c9;
+    margin-top: 2px;
+}
+.box1-icon {
+    background-color: #3e86c9;
+    padding: 10px;
+    border-radius: 50px;
+}
+.futeres-box2 {
+    background-color: #e8d6c5; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box2-icon {
+    background-color: #c45f06;
+    padding: 10px;
+    border-radius: 50px;
+}
+.futeres-box2  p{
+    color: #c45f06;
+    margin-top: 2px;
+}
+.box4-icon {
+    background-color: #0c6623;
+    padding: 10px;
+    border-radius: 50px;
+}
+.futeres-box4 {
+    background-color: #c5edcf; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.futeres-box4 p {
+    color: #0c6623;
+    margin-top: 2px;
+}
+.footer-part3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-part2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-part2 p{
+    margin: 2px;
+}
+.reach-us-headings {
+    color: #3e86c9;
+    font-weight: 600;
+    margin-top: 5px !important;
+}
+.social-media-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
