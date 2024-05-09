@@ -6,7 +6,7 @@ const Header = () => {
     return(
         <div className="header-container">
             <div>
-                <img src="https://hidoc-files.sgp1.digitaloceanspaces.com/hidoc-client-files/1703756420122.jpg" className='header-icon'/>
+                <img src="https://hidoc-files.sgp1.digitaloceanspaces.com/hidoc-client-files/1703756420122.jpg" className='header-icon' alt="header-icon"/>
             </div>
             <div>
                 <ul className="nav-items">

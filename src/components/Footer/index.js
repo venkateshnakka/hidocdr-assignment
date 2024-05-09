@@ -16,7 +16,7 @@ const Footer = () => {
         <footer>
             <div className="footer-container">
                 <div>
-                    <img src='https://hidoc.co/assets/img/logo/logo3.png'/>
+                    <img src='https://hidoc.co/assets/img/logo/logo3.png' alt="footer-logo"/>
                     <p>Fastest Growing Medical Platform for Doctors.</p>
                     <div className="social-media-icons">
                         < FaFacebookF />
