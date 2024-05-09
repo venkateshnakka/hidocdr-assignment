@@ -5,6 +5,7 @@ import './index.css'
 const Home = () =>{
     const [drugdata, setDrugdata] = useState()
     const [selectedDrugDetails, setSelectedDrugDetails] = useState(null);
+    const [formattedDate, setFormattedDate] = useState(null);
     const handleClick = (index) => {
         const clickedDrug = drugdata?.data?.drugData[index];
         setSelectedDrugDetails(clickedDrug);
@@ -20,12 +21,22 @@ const Home = () =>{
     useEffect(()=>{
         getDrugsdata()
     },[])
+    
     useEffect(() => {
         if (drugdata?.data?.drugData?.length > 0) {
             
             setSelectedDrugDetails(drugdata?.data?.drugData[0]);
+           
+        }
+        if (drugdata?.data?.exploreMore?.news?.publishedAt) {
+            const [month, day, year] = drugdata?.data?.exploreMore?.news?.publishedAt.split("/");
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const monthName = monthNames[parseInt(month, 10) - 1];
+            const formattedDate = `${day} ${monthName} ${year}`;
+            setFormattedDate(formattedDate)
         }
     }, [drugdata]);
+   
     return(
         <div>
             <p className="main-heading">Your one-stop Solution for <span className="main-heading-part">MEDICAL LEARNING & UPDATES</span></p>
@@ -57,7 +68,7 @@ const Home = () =>{
                 <div className="drug-table-box">
                     <h2>Drug Data</h2>
                     {drugdata?.data?.drugData?.map((drug,index)=>{
-                        return <p key={drug.id} onClick={() => handleClick(index)}>{drug.drugName}</p>
+                        return <p key={drug.id} onClick={() => handleClick(index)} className="drug-title">{drug.drugName}</p>
 
                         
                     })}
@@ -67,6 +78,28 @@ const Home = () =>{
                     <h3 className="main-heading-part">{selectedDrugDetails?.drugName}</h3>
                     <p>{selectedDrugDetails?.drugDetails}</p>
                 </div>
+           </div>
+           <div className="explore-more-container">
+              <div className="explore-more-cart1">
+                
+                <p className="news-title">
+                Explore more on Hidoc Dr.
+                </p>
+                <p className="hash-style">News</p>
+                <p className="news-title">{drugdata?.data?.exploreMore?.news?.title}</p>
+                <p>{drugdata?.data?.exploreMore?.news?.description}</p>
+                <p className="hash-style">{formattedDate}</p>
+              </div>
+              <div>
+                    <p className="news-title">{drugdata?.data?.exploreMore?.article?.articleTitle}</p>
+                    <p>{drugdata?.data?.exploreMore?.article?.metaDescription}</p>
+              </div>
+              <div>
+                  <div>
+                     <p className="news-title">{drugdata?.data?.exploreMore?.quiz?.metaDescription}</p>
+                     <p className="news-title">{drugdata?.data?.exploreMore?.survey?.metaDescription}</p>
+                  </div>
+              </div>
            </div>
 
         </div>

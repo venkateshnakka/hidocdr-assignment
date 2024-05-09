@@ -88,3 +88,25 @@
     font-weight: 600;
     font-size: 22px;
 }
+.drug-title {
+    cursor: pointer;
+}
+.news-title {
+    font-weight: bold;
+}
+.explore-more-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 70px;
+    gap: 20px;
+}
+.explore-more-cart1 {
+    text-align: start;
+    
+}
+.hash-style {
+    font-size: 14px;
+    color: gray;
+}
