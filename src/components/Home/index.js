@@ -6,6 +6,7 @@ const Home = () =>{
     const [drugdata, setDrugdata] = useState()
     const [selectedDrugDetails, setSelectedDrugDetails] = useState(null);
     const [formattedDate, setFormattedDate] = useState(null);
+    const [speciality, setSpeciality] = useState("Critical Care")
     const handleClick = (index) => {
         const clickedDrug = drugdata?.data?.drugData[index];
         setSelectedDrugDetails(clickedDrug);
@@ -17,7 +18,9 @@ const Home = () =>{
         const response = await fetch("https://hidocdr.com/api/hidoc-us/drug/getDrugList", options)
         const data = await response.json()
         setDrugdata(data)
+        
     }
+    
     useEffect(()=>{
         getDrugsdata()
     },[])
@@ -53,14 +56,26 @@ const Home = () =>{
                 </div>
                 <div className="speciality-btn-container">
                     <div className="speciality-btns">
-                        <button>Anesthesia</button>
-                        <button>Cardiology</button>
-                        <button>Critical Care</button>
+                        <button onClick={()=>{
+                            setSpeciality('Anesthesia')
+                        }}>Anesthesia</button>
+                        <button onClick={()=>{
+                            setSpeciality('Cardiology')
+                        }}>Cardiology</button>
+                        <button onClick={()=>{
+                            setSpeciality('Critical Care')
+                        }}>Critical Care</button>
                     </div>
                     <div className="speciality-btns">
-                        <button>Dentistry</button>
-                        <button>Dermatology</button>
-                        <button>Diabetology</button>
+                        <button onClick={()=>{
+                            setSpeciality('Dentistry')
+                        }}>Dentistry</button>
+                        <button onClick={()=>{
+                            setSpeciality('Dermatology')
+                        }}>Dermatology</button>
+                        <button onClick={()=>{
+                            setSpeciality('Diabetology')
+                        }}>Diabetology</button>
                     </div>
                 </div>
             </div>
@@ -90,14 +105,18 @@ const Home = () =>{
                 <p>{drugdata?.data?.exploreMore?.news?.description}</p>
                 <p className="hash-style">{formattedDate}</p>
               </div>
-              <div>
+              <div className="explore-more-cart1">
+                     <p className="hash-style">{speciality} . 10 Mar 2023</p>
                     <p className="news-title">{drugdata?.data?.exploreMore?.article?.articleTitle}</p>
-                    <p>{drugdata?.data?.exploreMore?.article?.metaDescription}</p>
+                    <p>{drugdata?.data?.exploreMore?.survey[0]?.metaDescription}</p>
               </div>
-              <div>
+              <div className="explore-more-cart1">
                   <div>
-                     <p className="news-title">{drugdata?.data?.exploreMore?.quiz?.metaDescription}</p>
-                     <p className="news-title">{drugdata?.data?.exploreMore?.survey?.metaDescription}</p>
+                  <p className="hash-style">{speciality} . 28 Mar 2023</p>
+                     <p className="news-title">{drugdata?.data?.exploreMore?.quiz?.metaDescription}</p><hr/>
+                     <p className="hash-style">{speciality} . 22 Feb 2023</p>
+                     <p className="news-title">A growth hormone deficiency can be diagnosed by a simple blood test.</p>
+                    
                   </div>
               </div>
            </div>

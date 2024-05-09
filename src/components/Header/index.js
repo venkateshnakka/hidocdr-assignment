@@ -27,7 +27,7 @@ const Header = () => {
                    < BsTrophy/>
                    <h3 className="trophy-text">274</h3>
                 </div>
-                <p>A</p>
+                <p className="header-icon-a">A</p>
             </div>
         </div>
     )
